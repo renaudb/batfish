@@ -14,11 +14,28 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
+  s.files = [
+    "README.rdoc",
+     "Rakefile",
+     "VERSION",
+     "batfish.gemspec",
+     "lib/batfish.rb",
+     "lib/data/bktree.rb",
+     "lib/data/trie.rb",
+     "test/helper.rb",
+     "test/test_bktree.rb",
+     "test/test_trie.rb"
+  ]
   s.homepage = %q{http://github.com/renaudb/batfish}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
   s.summary = %q{Just a bunch of functions.}
+  s.test_files = [
+    "test/helper.rb",
+     "test/test_bktree.rb",
+     "test/test_trie.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
