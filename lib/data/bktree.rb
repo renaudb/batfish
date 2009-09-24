@@ -1,6 +1,6 @@
 module Batfish
 
-  # A BK-tree is a datastructure used for
+  # A BK-tree is a data structure used for
   # nearest neighbor lookup in a metric space.
   # A metric space is any space with the
   # following properties:
@@ -9,18 +9,18 @@ module Batfish
   # * d(x,y) = d(y,x)
   # * d(x,z) <= d(x,y) + d(y,z)
   #
-  # To use this datastructure, the objects added
+  # To use this data structure, the objects added
   # to it must have a distance_to(other) class method
   # defined.
   class BKTree
     attr_reader :root
     
-    # Initialize a BKTree.
-    def initialize
+    # Initializes a BKTree.
+    def initialize()
       @root = nil
     end
     
-    # Add an object to the tree.
+    # Adds an object to the tree.
     # Returns the tree itself so several
     # adds may be chained together.
     def add(obj)
@@ -34,7 +34,7 @@ module Batfish
     alias_method :<<, :add
 
     # Returns true if the tree is empty.
-    def empty?
+    def empty?()
       return @root.nil? ? true : false
     end
     
@@ -100,7 +100,7 @@ module Batfish
     class Node
       attr_reader :value, :children
       
-      # Initialize a BKTree Node with
+      # Initializes a BKTree Node with
       # the given object as its value
       # or nil if no object is given.
       def initialize(obj=nil)
@@ -108,7 +108,7 @@ module Batfish
         @children = {}
       end
       
-      # Add a node to a node in
+      # Adds a node to a node in
       # a recursive way.
       def add(obj)
         distance = obj.distance_to(@value)

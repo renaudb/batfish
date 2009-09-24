@@ -1,2 +1,5 @@
-require 'data/trie'
-require 'data/bktree'
+require File.dirname(__FILE__) + '/data/linkedlist'
+require File.dirname(__FILE__) + '/data/stack'
+require File.dirname(__FILE__) + '/data/queue'
+require File.dirname(__FILE__) + '/data/trie'
+require File.dirname(__FILE__) + '/data/bktree'

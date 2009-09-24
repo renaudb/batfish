@@ -82,16 +82,19 @@ class TestTrie < Test::Unit::TestCase
   end
 
   def test_each
-    @t.add("dinosaur", 0)
-    @t.add("tyrannosaurus", 4)
-    @t.add("diplotomodon", 2)
-    @t.add("tyrannotitan", 5)
-    @t.add("raptor", 3)
-    @t.add("diplodocus", 1)
-    i = 0
+    words = {
+      "dinosaur" => 0,
+      "tyrannosaurus" => 4,
+      "diplotomodon" => 2,
+      "tyrannotitan" => 5,
+      "raptor" => 3,
+      "diplodocus" => 1
+    }
+    words.each do |k,v|
+      @t.add(k, v)
+    end
     @t.each do |k, v|
-      assert_equal(i, v)
-      i += 1
+      assert_equal(words[k.downcase], v)
     end
   end
 end

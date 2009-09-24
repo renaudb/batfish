@@ -1,6 +1,6 @@
 module Batfish
 
-  # A Trie is a datastructure used to
+  # A Trie is a data structure used to
   # store key value pairs where the key
   # is a string. It does so by through
   # a tree-like structure where each edge
@@ -11,8 +11,8 @@ module Batfish
   class Trie
     attr_reader :root
     
-    # Initialize a Trie
-    def initialize
+    # Initializes a Trie.
+    def initialize()
       @root = Node.new()
     end
     
@@ -59,13 +59,13 @@ module Batfish
     end
 
     # Returns true if the trie is empty.
-    def empty?
+    def empty?()
       return @root.children.empty? ? true : false
     end
     
     # Calls block once for each key value
     # pair in the trie.
-    def each
+    def each()
       @root.each("") do |k, v|
         yield(k, v)
       end
@@ -76,7 +76,7 @@ module Batfish
     class Node
       attr_reader :value, :children
       
-      # Initialize a Trie Node with
+      # Initializes a Trie Node with
       # the given object as its value
       # or nil if no object is given.
       def initialize(value=nil)
@@ -84,7 +84,7 @@ module Batfish
         @children = {}
       end
       
-      # Add a node to a node in a
+      # Adds a node to a node in a
       # recursive way.
       def add(key, value)
         if key.empty?
@@ -98,7 +98,7 @@ module Batfish
         end
       end
 
-      # Delete a key value pair from 
+      # Deletes a key value pair from 
       # a node in a recursive way.
       def delete(key)
         if key.empty?
@@ -138,8 +138,8 @@ module Batfish
       # Calls block once for each key
       # value pairs under self.
       def each(key, &block)
-        if value
-          yield(key, value)
+        if @value
+          yield(key, @value)
         end
         @children.each do |letter, child|
           child.each(key + letter, &block)

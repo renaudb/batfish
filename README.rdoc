@@ -4,6 +4,10 @@ Just a bunch of functions.
 
 Batfish is a collection of useful algorithms and data structures that I developed through the years for various projects. I decided to publish in case my hard drive comes to crash and for everyone to use.
 
+http://renaudbourassa.com/projects/batfish/
+
+http://github.com/renaudb/batfish/
+
 == Install
 
 If you haven't already, add github's gem server to your sources:
@@ -38,5 +42,9 @@ Here is a list of the algorithms and data structures batfish implements.
 
 === Data Structures
 
+- Linked List
+  - Sorted Linked List
+- Stack
+- Queue
 - BK-Tree
 - Trie
